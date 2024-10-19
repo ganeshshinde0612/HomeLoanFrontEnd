@@ -1,0 +1,63 @@
+<table class="table table-bordered">
+    <tr>
+        <th>Application No.</th>
+        <td>{{customerData.id}}</td>
+    </tr>
+
+    <tr>
+        <th>First Name</th>
+        <td>{{customerData.customerinfo.firstName}}</td>
+
+        <th>Middle Name</th>
+        <td>{{customerData.customerinfo.middleName}}</td>
+
+        <th>Last Name</th>
+        <td>{{customerData.customerinfo.lastName}}</td>
+    </tr>
+
+    <tr>
+        <th>Age</th>
+        <td>{{customerData.customerinfo.age}}</td>
+    </tr>
+
+    <tr>
+        <th>Gender</th>
+        <td>{{customerData.customerinfo.gender}}</td>
+    </tr>
+
+    <tr>
+
+        <th>Date Of Birth</th>
+        <td>{{customerData.customerinfo.dob}}</td>
+    </tr>
+
+    <tr>
+        <th>Mobile No.</th>
+        <td>{{customerData.customerinfo.mobileNo}}</td>
+
+        <th>E-mail Id</th>
+        <td>{{customerData.customerinfo.email}}</td>
+    </tr>
+
+    <tr>
+        <th>Aadhar No.</th>
+        <td>{{customerData.customerinfo.aadhar}}</td>
+
+        <th>Pancard No.</th>
+        <td>{{customerData.customerinfo.pancard}}</td>
+    </tr>
+
+    <tr>
+        <th style="color: blue;">Total Loan Required</th>
+        <td style="color: blue;">{{customerData.customerinfo.totalloanrequired}}</td>
+
+        <th style="color: rgb(10, 142, 100);">Sanctioned Amount</th>
+        <td style="color: rgb(10, 142, 100);">{{sanctiondetails.loanAmountSanctioned}}</td>
+    </tr>
+
+</table>
+
+<div class="alert alert-success" role="alert" *ngIf="successMsg">
+    {{successMsg}}
+</div>
+<button class="btn btn-success" (click)="disburseLoan()">Disburse Loan</button>

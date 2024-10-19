@@ -1,0 +1,271 @@
+<div class="container  was-validated">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <!-- <div class="card">
+                    <div class="card-body"> -->
+
+            <!-- Form -->
+            <form>
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="adhar">Aadhar:</label>
+                        <input type="file" class="form-control" id="adhar" (change)="onAadhar($event)" required
+                            accept=".jpg, .jpeg, .png">
+                    </div>
+                    <div class="form-group col">
+                        <label for="salary">Salary Slips:</label>
+                        <input type="file" class="form-control" id="salary" (change)="onSalarySlip($event)" required
+                            accept=".jpg, .jpeg, .png">
+                    </div>
+                    <div class="form-group col">
+                        <label for="incometax">Income Tax Return:</label>
+                        <input type="file" class="form-control" id="incometax" rows="3" (change)="onIncomeTax($event)"
+                            required accept=".jpg, .jpeg, .png">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="photo">Photo:</label>
+                        <input type="file" class="form-control" id="photo" (change)="onPhoto($event)" required
+                            accept=".jpg, .jpeg, .png">
+                    </div>
+                    <div class="form-group col">
+                        <label for="signature">Signature:</label>
+                        <input type="file" class="form-control" id="signature" (change)="onSignature($event)" required
+                            accept=".jpg, .jpeg, .png">
+                    </div>
+                    <div class="form-group col">
+                        <label for="propertyp">propertyProof:</label>
+                        <input type="file" class="form-control" id="propertyp" (change)="onPropertyProof($event)"
+                            required accept=".jpg, .jpeg, .png">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group abc">
+                        <label for="pancard">pancard:</label>
+                        <input type="file" class="form-control" id="pancard" (change)="onPancard($event)" required
+                            accept=".jpg, .jpeg, .png">
+                    </div>
+                </div>
+
+                <button type="button" (click)="onSubmit()" class="btn btn-success">Submit</button>
+                <button type="button" (click)="generatePDF()" class="btn btn-warning" [hidden]="hidebtn">Download Application Form</button>
+
+            </form>
+            <!-- End Form -->
+            <!-- </div>
+                </div> -->
+        </div>
+    </div>
+</div>
+
+
+
+<!---------------------------------------------------------------------------------------------->
+
+<br>
+
+<div #content>
+    <div class="container" *ngIf="customerData">
+        <h3 class="text-start text-success">Customer Application Form</h3>
+        <table class="table table-bordered" style="width: 60%;">
+
+
+            <tr>
+                <th>Application No.</th>
+                <td>{{customerData.id}}</td>
+            </tr>
+
+            <tr>
+                <th>Full Name</th>
+                <td>{{customerData.customerinfo.firstName}} {{customerData.customerinfo.middleName}}
+                    {{customerData.customerinfo.lastName}}</td>
+            </tr>
+
+            <tr>
+                <th>Age</th>
+                <td>{{customerData.customerinfo.age}}</td>
+            </tr>
+
+            <tr>
+                <th>Gender</th>
+                <td>{{customerData.customerinfo.gender}}</td>
+            </tr>
+
+            <tr>
+
+                <th>Date Of Birth</th>
+                <td>{{customerData.customerinfo.dob}}</td>
+            </tr>
+
+            <tr>
+                <th>Mobile No.</th>
+                <td>{{customerData.customerinfo.mobileNo}}</td>
+            </tr>
+
+            <tr>
+                <th>E-mail Id</th>
+                <td>{{customerData.customerinfo.email}}</td>
+            </tr>
+
+            <tr>
+                <th>Aadhar No.</th>
+                <td>{{customerData.customerinfo.aadhar}}</td>
+
+                <th>Pancard No.</th>
+                <td>{{customerData.customerinfo.pancard}}</td>
+            </tr>
+
+            <tr>
+                <th style="color: blue;">Total Loan Required</th>
+                <td style="color: blue;">{{customerData.customerinfo.totalloanrequired}}</td>
+            </tr>
+            <!-- second table -->
+            <tr>
+                <th>Father Name</th>
+                <td>{{customerData.customerfamilydetails.fatherName}}</td>
+
+                <th>Mother Name</th>
+                <td>{{customerData.customerfamilydetails.motherName}}</td>
+            </tr>
+            <tr>
+                <th>No Of Children</th>
+                <td>{{customerData.customerfamilydetails.noOfChild}}</td>
+
+                <th>Family Member</th>
+                <td>{{customerData.customerfamilydetails.noOfFamilyMember}}</td>
+            </tr>
+            <tr>
+                <th>Family Income</th>
+                <td>{{customerData.customerfamilydetails.familyIncome}}</td>
+
+                <!-- third table -->
+
+                <th>House No:- </th>
+                <td>{{customerData.customeraddress.houseNo}}</td>
+            </tr>
+            <tr>
+                <th>Area Name:- </th>
+                <td>{{customerData.customeraddress.areaName}}</td>
+
+                <th>City Name:- </th>
+                <td>{{customerData.customeraddress.cityName}}</td>
+            </tr>
+            <tr>
+                <th>District:- </th>
+                <td>{{customerData.customeraddress.district}}</td>
+
+                <th>State:- </th>
+                <td>{{customerData.customeraddress.state}}</td>
+            </tr>
+            <tr>
+                <th>Pincode:- </th>
+                <td>{{customerData.customeraddress.pincode}}</td>
+
+                <!-- educational details -->
+
+                <th>Specialization:- </th>
+                <td>{{customerData.educationaldetails.speciallization}}</td>
+            </tr>
+            <tr>
+                <th>Qualification:- </th>
+                <td>{{customerData.educationaldetails.qualification}}</td>
+
+                <th>Passing Year:- </th>
+                <td>{{customerData.educationaldetails.passingYear}}</td>
+            </tr>
+            <tr>
+                <th>College Name:- </th>
+                <td>{{customerData.educationaldetails.collegeName}}</td>
+
+                <!-- customer profession -->
+
+                <th>Profession Type:- </th>
+                <td>{{customerData.customerprofession.professionType}}</td>
+            </tr>
+
+            <tr>
+                <th>Salary:- </th>
+                <td>{{customerData.customerprofession.salary}}</td>
+
+                <th>Working Period:- </th>
+                <td>{{customerData.customerprofession.workingPeriod}}</td>
+            </tr>
+            <tr>
+                <th>Designation:- </th>
+                <td>{{customerData.customerprofession.designation}}</td>
+
+                <!-- customer mortgage -->
+
+                <th>Property Value Mortgage:- </th>
+                <td>{{customerData.customermortgage.propertyValue}}</td>
+            </tr>
+            <tr>
+                <th>Property Type Mortgage:- </th>
+                <td>{{customerData.customermortgage.propertyType}}</td>
+
+                <th>Loan On Property Mortgage :- </th>
+                <td>{{customerData.customermortgage.loanOnProperty}}</td>
+            </tr>
+            <!-- customer account detail -->
+            <tr>
+                <th>Account Type:- </th>
+                <td>{{customerData.customeraccountdetails.accountType}}</td>
+
+                <th>Account Holder Name:- </th>
+                <td>{{customerData.customeraccountdetails.accountHolderName}}</td>
+            </tr>
+            <tr>
+                <th>Account No:- </th>
+                <td>{{customerData.customeraccountdetails.accountNo }}</td>
+                <!-- privious loan -->
+                <th>Loan Amount:- </th>
+                <td>{{customerData.customerpreviousloan.loanAmount}}</td>
+            </tr>
+            <tr>
+                <th>Paid Amount:- </th>
+                <td>{{customerData.customerpreviousloan.paidAmount}}</td>
+
+                <th>Remainig Amount:- </th>
+                <td>{{customerData.customerpreviousloan.remainingAmount}}</td>
+            </tr>
+            <tr>
+                <th>Loan Status:- </th>
+                <td>{{customerData.customerpreviousloan.loanStatus}}</td>
+
+                <th>IfSC Code:- </th>
+                <td>{{customerData.customerpreviousloan.ifscCode}}</td>
+            </tr>
+            <tr>
+                <th>Bank Name:- </th>
+                <td>{{customerData.customerpreviousloan.bankName}}</td>
+                <!-- Property details -->
+                <th>Property Type:- </th>
+                <td>{{customerData.customerpropertydetails.propertyType}}</td>
+            </tr>
+            <tr>
+                <th>Property Area:- </th>
+                <td>{{customerData.customerpropertydetails.propertyArea}}</td>
+
+                <th>Construction Area:- </th>
+                <td>{{customerData.customerpropertydetails.constructionArea}}</td>
+            </tr>
+            <tr>
+                <th>Property Price:- </th>
+                <td>{{customerData.customerpropertydetails.propertyPrice}}</td>
+
+                <th>Property Address:- </th>
+                <td>{{customerData.customerpropertydetails.propertyAddress}}</td>
+            </tr>
+           
+        </table>
+
+    </div>
+</div>
+
+<br>
+
+
+<!-- <input type="text" #nameInput placeholder="Enter Name">
+<input type="text" #messageInput placeholder="Enter Message">
+<button (click)="generatePDF()">Generate PDF</button> -->

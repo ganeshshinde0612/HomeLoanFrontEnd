@@ -1,0 +1,12 @@
+<div class="container">
+   
+
+    <div *ngFor="let btn of options[0][userType]">
+
+        <button class="btn btn-warning" [routerLink]="[btn.link]">{{btn.label}}</button>
+
+    </div>
+
+
+    
+</div>

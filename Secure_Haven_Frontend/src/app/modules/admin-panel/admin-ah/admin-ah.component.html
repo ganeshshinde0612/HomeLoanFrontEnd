@@ -1,0 +1,39 @@
+ 
+
+<div [hidden]="loandata">
+    <h4 class="  mb-3 p-2">Customer Loan Applications</h4>
+    <table class="table  table-bordered" >
+      <thead>
+        <tr>
+          <th scope="col">Application No.</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Pancard</th>
+          <th scope="col">Mobile No.</th>
+          <th class="text-center" scope="col">Select</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let a of allLoanApplication">
+          
+          <td>{{a.id}}</td>
+          <td>{{a.customerinfo.firstName}}</td>
+          <td>{{a.customerinfo.lastName}}</td>
+          <td>{{a.customerinfo.email}}</td>
+          <td>{{a.customerinfo.pancard}}</td>
+          <td>{{a.customerinfo.mobileNo}}</td> 
+          <td class="text-center">
+            
+            <!-- <input type="checkbox" value="{{i.id}}" name="id"> -->
+            <!-- <input type="checkbox" (change)="toggleSelection(a.id)" /> -->
+            <button class="btn btn-primary" routerLink="viewDetailsah" (click)="viewDetails(a.id)">View Details</button>
+          </td>
+        </tr>
+  
+        
+      </tbody>
+    </table>
+  </div>
+
+  <router-outlet></router-outlet>

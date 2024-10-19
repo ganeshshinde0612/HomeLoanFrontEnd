@@ -1,0 +1,23 @@
+<form [formGroup]="AccountDetails" (ngSubmit)="onSubmit()">
+
+    <mat-form-field>
+      <mat-label>Account Type</mat-label>
+      <input matInput formControlName="accountType" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Account Holder Name</mat-label>
+      <input matInput formControlName="accountHolderName" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>AccountNo</mat-label>
+      <input matInput formControlName="accountNo" required>
+    </mat-form-field>
+
+
+    <br>
+      <button mat-raised-button class="btn" color="primary" matStepperPrevious>Back</button>&nbsp;
+      <button mat-raised-button color="primary" matStepperNext [disabled]="AccountDetails.invalid">Next</button>
+  
+  </form>

@@ -1,0 +1,36 @@
+* {
+   margin: 0;
+}
+
+/* .example-stepper {
+    margin-top: 8px;
+  }
+  
+  .mat-mdc-form-field {
+    margin-top: 16px;
+  }  */
+
+mat-form-field {
+   width: 300px;
+   margin: 10px;
+   margin-left: 40px;
+}
+
+.btn {
+   margin-left: 25px;
+   
+}
+
+.btn-color {
+   background-color: green;
+}
+
+/* .formfields{
+   border-radius: 5px;
+   box-shadow: -2px -2px 12px rgb(211, 208, 208);
+   width: 100%;
+   /* background-color: rgb(205, 207, 207); */
+ /* } */
+ /* form{ */
+   /* margin-top: 100px; */
+ /* }  */

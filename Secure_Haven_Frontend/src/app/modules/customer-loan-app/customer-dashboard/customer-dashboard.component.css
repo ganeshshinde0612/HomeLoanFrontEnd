@@ -1,0 +1,99 @@
+.nav-link:hover{
+    background-color: rgb(234, 235, 236);
+    border-radius: 3px;
+}
+
+.navbar{
+    /* padding-left: 20px; */
+    box-shadow: -2px 1px 5px 2px rgb(162, 160, 160);
+    border-radius: 5px;
+    /* margin:5px auto; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 0.5px;
+    
+ }
+ 
+   .navbar-nav .nav-link {
+     font-size: 17.2px;
+     /* font-weight: ; */
+     color: rgb(11, 11, 11);
+   }
+   
+   .navbar-nav .nav-link.active {
+     /* border-bottom: 3px solid rgb(83, 242, 96); */
+     border-bottom: 3px solid rgb(66, 150, 240);
+   }
+
+   .homebg
+{
+    height: 500px;
+    width: 96.8%;
+    background-color: rgb(246, 249, 246);
+    display: flex;
+}
+
+.homecontent 
+{
+    /* background-color:aqua ; */
+    height: 500px;
+    width: 56%;
+    margin: 0px ;
+    letter-spacing: 2px;
+    
+    /* font-weight: bold; */
+    float: left;
+}
+ span
+{
+    /* background-color: red; */
+    color:rgb(57, 131,120);
+    letter-spacing: 1px;
+    /* font-size: 15px; */
+    /* padding-left: -3; */
+}
+.homeheadline {
+    /* padding-left: 15px; */
+    font-size: 28px;
+    /* background-color: yellow; */
+    /* word-spacing: 5px; */
+
+    
+}
+.hometagline
+{
+    margin-left: 15px;
+    /* font-weight: bold; */
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+.homeapplybtn{
+    margin-left: 25px;
+    margin-top: 70px;
+}
+
+.homeimage
+{
+    /* background-color: aquamarine; */
+    height: 500px;
+    width: 45%;
+    float: left;   
+}
+
+.homeheading{
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    font-family: sans-serif;
+    line-height: 10px;
+    color: rgb(69, 67, 67);
+}
+
+.homeloan{
+    background-color: white;
+    height: 500px;
+    width: 96.8%;
+    margin-left: 23px;
+    /* background-color: rgb(246, 249, 246); */
+    /* display: flex;
+    justify-content: center; */
+}

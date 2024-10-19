@@ -1,0 +1,160 @@
+<div class="container">
+    <h3 class="mb-4">Inquiry Form</h3>
+    <form [formGroup]="customerenquiry" (ngSubmit)="onSubmit()" class="was-validated">
+        <!-- <div class="form-group">
+        <label for="cid">ID</label>
+        <input type="text" class="form-control" id="cid" formControlName="id" required>
+      </div> -->
+
+        <div class="row d-flex">
+            <div class="col">
+                <!-- first name validation  -->
+                <div
+                    *ngIf="customerenquiry.controls['firstName'].touched && customerenquiry.controls['firstName'].invalid  ">
+                    <span *ngIf="customerenquiry.controls['firstName'].hasError('required')">
+                        * First Name is Required
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="fName">First Name</label>
+                    <input type="text" class="form-control" id="fName" formControlName="firstName" required>
+                </div>
+
+            </div>
+
+            <div class="col">
+                <!-- middle name validation  -->
+                <div
+                    *ngIf="customerenquiry.controls['middleName'].touched && customerenquiry.controls['middleName'].invalid  ">
+                    <span *ngIf="customerenquiry.controls['middleName'].hasError('required')">
+                        *Middle Name is Require
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="mName">Middle Name</label>
+                    <input type="text" class="form-control" id="mName" formControlName="middleName" required>
+                </div>
+
+            </div>
+            <div class="col">
+                <!-- last name validation  -->
+                <div
+                    *ngIf="customerenquiry.controls['lastName'].touched && customerenquiry.controls['lastName'].invalid  ">
+                    <span *ngIf="customerenquiry.controls['lastName'].hasError('required')">
+                        * Last Name is Required
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="lName">Last Name</label>
+                    <input type="text" class="form-control " id="lName" formControlName="lastName" required>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row d-flex">
+            <!-- age validation -->
+            <div *ngIf="customerenquiry.controls['age'].touched && customerenquiry.controls['age'].invalid  ">
+                <span *ngIf="customerenquiry.controls['age'].hasError('required')">
+                    * Age is Required
+                </span>
+            </div>
+            <div class="form-group col-sm-5">
+                <label for="age1">Age</label>
+                <input type="tel" class="form-control" id="age1" formControlName="age" required>
+            </div>
+
+            <div class="form-group col-sm-6">
+                <div *ngIf="customerenquiry.controls['gender'].touched && customerenquiry.controls['gender'].invalid  ">
+                    <span *ngIf="customerenquiry.controls['gender'].hasError('required')">
+                        * gender is Required
+                    </span>
+                            
+                </div>
+                <div class="form-group ">
+                    <label>Gender</label>
+                    <div class="form-check d-flex ">
+                        <input class="form-check-input" type="radio" id="Male" formControlName="gender" value="male"
+                            [checked]="customerenquiry.get('gender').value === 'male' ">
+                        <label class="form-check-label" for="Male">Male</label>
+                        <input class="form-check-input" type="radio" id="Female" formControlName="gender" value="female"
+                            [checked]="customerenquiry.get('gender').value === 'female' ">
+                        <label class="form-check-label" for="Female">Female</label>
+                        <input class="form-check-input" type="radio" id="Other" formControlName="gender" value="other"
+                            [checked]="customerenquiry.get('gender').value === 'other' ">
+                        <label class="form-check-label" for="Other">Other</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row d-flex">
+            <!-- <div class="form-group col-sm-5">
+          <label for="dob">Date of Birth</label>
+          <input type="date" class="form-control" id="dob" [max]="minDate" formControlName="dob" required>
+        </div> -->
+
+            <div class="form-group col-sm-5">
+                <div
+                    *ngIf="customerenquiry.controls['mobileNo'].touched && customerenquiry.controls['mobileNo'].invalid ">
+                    <span *ngIf="customerenquiry.controls['mobileNo'].hasError('required')">
+                        * Mobile Number is Required
+                    </span>
+                    <span *ngIf="customerenquiry.controls['mobileNo'].hasError('pattern')">
+                        *Fill Valid Mobile
+                    </span>
+                </div>
+                <label for="mobileno">Mobile Number</label>
+                <input type="text" class="form-control" id="mobileno" formControlName="mobileNo"
+                    placeholder="ex-9909191173" required>
+            </div>
+
+            <div *ngIf="customerenquiry.controls['pancard'].touched && customerenquiry.controls['pancard'].invalid ">
+                <span *ngIf="customerenquiry.controls['pancard'].hasError('required')">
+                    * Pancard is required
+                </span>
+                <span *ngIf="customerenquiry.controls['pancard'].hasError('pattern')">
+                    *Fill Valid Pancard Number
+                </span>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="pan">Pan Number</label>
+                <input type="text" class="form-control" id="pan" formControlName="pancard" placeholder="ex-SHJAS7732H"
+                    required>
+            </div>
+        </div>
+
+        <div *ngIf="customerenquiry.controls['email'].touched && customerenquiry.controls['email'].invalid ">
+            <span *ngIf="customerenquiry.controls['email'].hasError('required')">
+                * Email is Required
+            </span>
+            <span *ngIf="customerenquiry.controls['email'].hasError('email')">
+                * fill correct email
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="emailId">Email:</label>
+            <input type="email" class="form-control ms-2 me-5" id="emailId" formControlName="email"
+                placeholder="ex-user@gmail.com" required>
+        </div>
+
+        <!-- <div formGroupName="cibilinfo">
+        <div class="form-group">
+          <label for="cibilid">Cibil Id:</label>
+          <input type="text" class="form-control" id="cibilid" formControlName="id" placeholder="cibil id">
+        </div>
+        <div class="form-group">
+          <label for="cibilscore">Cibil Score:</label>
+          <input type="text" class="form-control" id="cibilscore" formControlName="cibilScore" placeholder="Cibil Score">
+        </div>
+        <div class="form-group">
+          <label for="cibildate">Cibil Date:</label>
+          <input type="date" class="form-control" id="cibildate" formControlName="cibilDate" >
+        </div>
+      </div> -->
+        <p style="color: blue; font-size: 16px;font-family: sans-serif;letter-spacing: 1px;">{{message}}</p>
+        <button type="submit" class="btn btn-success w-100">Submit</button>
+    </form>
+</div>

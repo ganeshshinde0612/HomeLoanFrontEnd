@@ -1,0 +1,165 @@
+<div class="container">
+    <h4 class="mt-2">Registration Form</h4> <br>
+
+    <form [formGroup]="CustomerRegister" (ngSubmit)="onSubmit()" class="was-validated">
+
+        <!-- Example for the firstName field -->
+
+        <!-- <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" formControlName="id" readonly>
+        </div> -->
+        <div class="row d-flex">
+
+            <div class="form-group col">
+                <div
+                    *ngIf="CustomerRegister.controls['firstName'].touched && CustomerRegister.controls['firstName'].invalid ">
+                    <span *ngIf="CustomerRegister.controls['firstName'].hasError('required')">
+                        First Name is Required
+                    </span>
+                </div>
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" id="firstName" formControlName="firstName" required>
+            </div>
+
+            <div class="form-group col">
+                <div
+                    *ngIf="CustomerRegister.controls['middleName'].touched && CustomerRegister.controls['middleName'].invalid">
+                    <span *ngIf="CustomerRegister.controls['middleName'].hasError('required')">
+                        middle Name is required
+                    </span>
+                </div>
+                <label for="middleName"><span>*</span>Middle Name</label>
+                <input type="text" class="form-control" id="middleName" formControlName="middleName" required>
+            </div>
+            <div class="form-group col">
+                <div
+                    *ngIf="CustomerRegister.controls['lastName'].touched && CustomerRegister.controls['lastName'].invalid">
+                    <span *ngIf="CustomerRegister.controls['lastName'].hasError('required')">
+                        last name is required
+                    </span>
+                </div>
+                <label for="lastName"><span>*</span>Last Name</label>
+                <input type="text" class="form-control" id="lastName" formControlName="lastName" required>
+            </div>
+        </div>
+
+
+        <div class="row d-flex">
+            <div class="form-group col-sm-5">
+                <div *ngIf="CustomerRegister.controls['age'].touched && CustomerRegister.controls['age'].invalid">
+                    <span *ngIf="CustomerRegister.controls['age'].hasError('required')">
+                        age is required
+                    </span>
+                    <span *ngIf="CustomerRegister.controls['age'].hasError('max')">
+                        max age is 100
+                    </span>
+                    <span *ngIf="CustomerRegister.controls['age'].hasError('pattern')">
+                        digits only
+                    </span>
+                </div>
+                <label for="age"><span>*</span>Age</label>
+                <input type="tel" class="form-control" id="age" formControlName="age" required [max]="100">
+            </div>
+            <div class="form-group col-sm-5">
+                <div class="form-group ">
+                    <div
+                        *ngIf="CustomerRegister.controls['gender'].touched && CustomerRegister.controls['gender'].invalid">
+                        <span *ngIf="CustomerRegister.controls['gender'].hasError('required')">
+                            gender is required
+                        </span>
+                    </div>
+                    <label class="gender"><span>*</span>Gender</label>
+                    <div class="form-check d-flex genderbtn">
+                        <input class="form-check-input" type="radio" id="male" formControlName="gender" name="gender"
+                            value="male" required>
+                        <label class="form-check-label" for="male">Male</label>
+                        <input class="form-check-input" type="radio" id="female" formControlName="gender" name="gender"
+                            value="female" required>
+                        <label class="form-check-label" for="female">Female</label>
+                        <input class="form-check-input" type="radio" id="other" formControlName="gender" name="gender"
+                            value="other" required>
+                        <label class="form-check-label" for="other">Other</label>
+                    </div>
+                    <!-- <div class="form-check">
+                     
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="row d-flex">
+            <div class="form-group col-sm-5">
+                <div *ngIf="CustomerRegister.controls['dob'].touched && CustomerRegister.controls['dob'].invalid">
+                    <span *ngIf="CustomerRegister.controls['dob'].hasError('required')">
+                        dob is required
+                    </span>
+                </div>
+                <label for="dob"><span>*</span>Date of Birth</label>
+                <input type="date" class="form-control" id="dob" [max]="minDate" formControlName="dob" required>
+            </div>
+            <div class="form-group col-sm-5">
+                <div
+                    *ngIf="CustomerRegister.controls['mobileNo'].touched && CustomerRegister.controls['mobileNo'].invalid">
+                    <span class="genderbtn" *ngIf="CustomerRegister.controls['mobileNo'].hasError('required')">
+                        mobile no is required
+                    </span>
+                    <span class="genderbtn" *ngIf="CustomerRegister.controls['mobileNo'].hasError('pattern')">
+                       10 digit only
+                    </span>
+                </div>
+                <label class="genderbtn" for="mobileNo"><span>*</span>Mobile Number</label>
+                <input type="text" class="form-control genderbtn" id="mobileNo" formControlName="mobileNo" required>
+            </div>
+        </div>
+
+        <div class="d-flex">
+        <div class="form-group">
+            <div *ngIf="CustomerRegister.controls['email'].touched && CustomerRegister.controls['email'].invalid">
+                <span *ngIf="CustomerRegister.controls['email'].hasError('required')">
+                    email is reuired
+                </span>
+            </div>
+            <label for="email"><span>*</span>Email</label>
+            <input  type="email" class="form-control email d-flex" id="email" formControlName="email" required>
+        </div>
+        <div class="form-group">
+            <div *ngIf="CustomerRegister.controls['username'].touched && CustomerRegister.controls['username'].invalid">
+                <span class="uname" *ngIf="CustomerRegister.controls['username'].hasError('required')">
+                    username is reuired
+                </span>
+                <span class="uname" *ngIf="CustomerRegister.controls['username'].hasError('pattern')">
+                    username contains max 10 char ,min 6 char
+                    user can enter characters + digits + one special symbol                    
+                 </span>
+            </div>
+            <label class="uname" for="username"><span>*</span>Username</label>
+            <input type="text" class="form-control uname" id="username" formControlName="username" required>
+        </div>
+    </div>
+        <div class="form-group">
+            <div *ngIf="CustomerRegister.controls['password'].touched && CustomerRegister.controls['password'].invalid">
+                <span *ngIf="CustomerRegister.controls['password'].hasError('required')">
+                    password is reuired
+                </span>
+                <span *ngIf="CustomerRegister.controls['password'].hasError('pattern')">
+                   password contains max 8 char ,min 5 char
+                    user can enter characters + digits + one special symbol                    
+                 </span>
+            </div>
+            <label for="password"><span>*</span>Password</label>
+            <input type="password" class="form-control password" id="password" formControlName="password" required>
+        </div>
+        <!-- <div class="form-group">
+            <label for="otp">OTP</label>
+            <input type="text" class="form-control" id="otp" name="otp" required>
+        </div>
+        <div class="form-group">
+            <label for="randompassword">Random Password</label>
+            <input type="text" class="form-control" id="randompassword" name="randompassword" required>
+        </div> -->
+        <p style="font-size: 17px;font-family: sans-serif;letter-spacing: 1px;">{{message}}</p>
+        <button type="submit" class="btn btn-success w-100">Submit</button>
+    </form>
+
+</div>

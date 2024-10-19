@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-sm mt-2  navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand ms-5 text-success"><img src="assets/Images/logo-no-background.png" alt="" height="50"
+            width="250"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="collapsibleNavbar">
+            <ul class="navbar-nav  ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="Adminlogin" routerLinkActive="active" ></a>
+                    <!--  (click)="navigateAndSetActive('about')" [class.active]="activeItem === 'about'" -->
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link " >{{usertype}}</a>
+                    <!--  (click)="navigateAndSetActive('about')" [class.active]="activeItem === 'about'" -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " routerLink="loanstatus" routerLinkActive="active" >Loan Status</a>
+                    <!-- (click)="navigateAndSetActive('contact')" [class.active]="activeItem === 'contact'" -->
+                </li>  
+                <li class="nav-item">
+                    <a class="nav-link " href="/" routerLinkActive="active" >Log Out</a>
+                    <!-- (click)="navigateAndSetActive('contact')" [class.active]="activeItem === 'contact'" -->
+                </li>   
+                
+    
+            </ul>
+        </div>
+    </div>
+</nav>

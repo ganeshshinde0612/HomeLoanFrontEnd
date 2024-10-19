@@ -1,0 +1,28 @@
+div{
+  /* width: 100%; */
+  margin: 0;
+  /* width: 90%; */
+  
+  
+}
+
+.example-stepper {
+    margin-top: 8px;
+    /* display: flex; */
+  /* align-items: center; */
+  }
+
+  .mat-step .mat-step-icon {
+    display: none;
+  }
+   /*
+  .mat-mdc-form-field {
+    margin-top: 16px;
+  }  */
+
+  #loanform{
+    /* border: 2px solid green; */
+    border-radius: 5px;
+    /* box-shadow: -2px -2px 12px rgb(211, 208, 208); */
+  }
+

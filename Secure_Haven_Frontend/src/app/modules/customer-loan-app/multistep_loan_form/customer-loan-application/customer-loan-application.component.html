@@ -1,0 +1,80 @@
+@switch (stepperOrientation | async) {
+@case ('horizontal') {}
+@case ('vertical') {}
+}
+
+
+<div id="loanform">
+
+    <mat-stepper labelPosition="bottom" #stepper class="example-stepper" [orientation]="(stepperOrientation | async)!">
+
+        
+            <mat-step>
+                <ng-template matStepLabel>Info</ng-template>
+                <app-customer-info></app-customer-info>
+            </mat-step>
+        
+            <mat-step>
+
+                <ng-template matStepLabel>Family <br> Details</ng-template>
+                <app-customer-family-details></app-customer-family-details>
+
+            </mat-step>
+
+            <mat-step>
+                <ng-template matStepLabel>Address</ng-template>
+                <app-customer-address></app-customer-address>
+
+            </mat-step>
+
+            <mat-step>
+                <ng-template matStepLabel>Education</ng-template>
+                <app-customer-education></app-customer-education>
+
+            </mat-step>
+
+            <mat-step>
+                <ng-template matStepLabel>Profession</ng-template>
+                <app-customer-profession></app-customer-profession>
+
+            </mat-step>
+
+            <mat-step>
+                <ng-template matStepLabel>Mortgage</ng-template>
+                <app-customer-mortgage></app-customer-mortgage>
+
+            </mat-step>
+
+            <mat-step>
+                <ng-template matStepLabel>Account Details</ng-template>
+                <app-customer-account></app-customer-account>
+
+            </mat-step>
+
+
+            <mat-step>
+                <ng-template matStepLabel>Previous Loan</ng-template>
+                <app-customer-previous-loan></app-customer-previous-loan>
+
+            </mat-step>
+
+            <mat-step>
+                <ng-template matStepLabel>Property Details</ng-template>
+                <app-customer-property-details></app-customer-property-details>
+
+            </mat-step>
+
+
+
+
+            <!-- Add more mat-steps as needed -->
+
+            <mat-step>
+                <ng-template matStepLabel>Documents</ng-template>
+                <app-customer-documents></app-customer-documents>
+            </mat-step>
+
+        
+    </mat-stepper>
+
+</div>

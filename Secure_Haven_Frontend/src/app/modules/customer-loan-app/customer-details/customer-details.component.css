@@ -1,0 +1,39 @@
+tr
+{
+    height: 40px;
+}
+td{
+    height: 20px;
+}
+table{
+   
+    width: 900px;
+}
+
+.payment-table {
+    width: 80%;
+    border-collapse: collapse; /* Ensures borders are not doubled */
+}
+
+.payment-th, .payment-td {
+    border: 1px solid rgb(117, 115, 115); /* Sets border for both table headers and cells */
+    padding: 8px; /* Adds some padding for better readability */
+    text-align: center; /* Centers text within the cells */
+}
+
+
+
+.main-content{
+    margin: 0 auto;
+    width: 80%;
+    /* background-color: aqua; */
+    box-shadow: -2px -2px 12px rgb(211, 208, 208);
+}
+
+.btn-color{
+    background-color: rgb(52, 227, 192);
+}
+
+/* .swal-title.small-font {
+    font-size: 10px; /* Adjust the font size as needed */
+  /* }  */

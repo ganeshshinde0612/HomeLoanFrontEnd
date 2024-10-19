@@ -1,0 +1,28 @@
+<form [formGroup]=" customer_education_details" (ngSubmit)="onSubmit()">
+
+    <mat-form-field>
+      <mat-label>Specialization</mat-label>
+      <input matInput formControlName="speciallization" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Qualification</mat-label>
+      <input matInput formControlName="qualification" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Passing Year</mat-label>
+      <input matInput formControlName="passingYear" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>College Name</mat-label>
+      <input matInput formControlName="collegeName" required>
+    </mat-form-field>
+    
+    <br>
+      <button mat-raised-button class="btn" color="primary" matStepperPrevious>Back</button>&nbsp;
+      <button mat-raised-button color="primary" matStepperNext [disabled]="customer_education_details.invalid">Next</button>
+  
+  </form>
+  

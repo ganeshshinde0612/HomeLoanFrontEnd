@@ -1,0 +1,39 @@
+<form [formGroup]="previousloan" (ngSubmit)="onSubmit()">
+
+    <mat-form-field>
+        <mat-label>Loan Amount</mat-label>
+        <input matInput formControlName="loanAmount" required>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Paid Amount</mat-label>
+        <input matInput formControlName="paidAmount" required>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Remaining Amount</mat-label>
+        <input matInput formControlName="remainingAmount" required>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Loan Status</mat-label>
+        <input matInput formControlName="loanStatus" required>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>IFSC Code</mat-label>
+        <input matInput formControlName="ifscCode" required>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Bank Name</mat-label>
+        <input matInput formControlName="bankName" required>
+    </mat-form-field>
+
+    
+
+    <br>
+    <button mat-raised-button class="btn" color="primary" matStepperPrevious>Back</button>&nbsp;
+    <button mat-raised-button color="primary" matStepperNext [disabled]="previousloan.invalid">Next</button>
+
+</form>

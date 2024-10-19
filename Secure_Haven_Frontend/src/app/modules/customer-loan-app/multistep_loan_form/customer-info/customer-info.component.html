@@ -1,0 +1,79 @@
+<div class="formfields">
+<form [formGroup]="customerinfo" (ngSubmit)="onSubmit()">
+    <!-- <mat-form-field >
+      <mat-label>CustomerInfoID</mat-label>
+      <input matInput formControlName="id" placeholder="custo_info_id" required>
+    </mat-form-field> -->
+
+    <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName" readonly>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Middle Name</mat-label>
+        <input matInput formControlName="middleName" readonly>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName" readonly>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Age</mat-label>
+        <input matInput formControlName="age" readonly>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Gender</mat-label>
+        <input matInput formControlName="gender" readonly>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Date of Birth</mat-label>
+        <input matInput formControlName="dob" readonly>
+
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Mobile No</mat-label>
+        <input matInput formControlName="mobileNo" readonly>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" readonly>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Aadhar no</mat-label>
+        <input matInput formControlName="aadhar" >
+        <mat-error *ngIf="customerinfo.get('aadhar').hasError('required')">Aadhar number is required.</mat-error>
+        <mat-error *ngIf="customerinfo.get('aadhar').hasError('pattern')">Invalid Aadhar number.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Pancard</mat-label>
+        <input matInput formControlName="pancard" >
+        <mat-error *ngIf="customerinfo.get('pancard').hasError('required')">PAN number is required.</mat-error>
+        <mat-error *ngIf="customerinfo.get('pancard').hasError('pattern')">Invalid PAN number.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>TotalLoanRequired</mat-label>
+        <input matInput formControlName="totalloanrequired" >
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Marital Status</mat-label>
+        <input matInput formControlName="maritalStatus" >
+    </mat-form-field>
+
+    <br>
+
+    <!-- <button class="btn" mat-raised-button color="primary" matStepperPrevious>Back</button>&nbsp; -->
+    <button mat-raised-button color="primary" type="submit" matStepperNext [disabled]="customerinfo.invalid">Next</button>
+
+</form> 
+</div>

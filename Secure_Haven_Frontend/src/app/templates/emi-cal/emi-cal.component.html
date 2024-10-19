@@ -1,0 +1,65 @@
+<h4 class="calcheading">Calculate Your Emi Easily with Secure Calculator</h4> <br>
+
+<div class="emicalculator">
+    <div class="emicalcform">
+
+        <form class="" [formGroup]="emiCalculatorForm" (ngSubmit)="calculateEmi()">
+
+            <!-- First Data -->
+            <label for="loanAmount">Home Loan Amount:</label>
+            <input type="text" (change)="calculateEmi()" id="loanAmount"  class="form-control w-50 mt-2 ms-2" placeholder="Loan amount"
+                formControlName="loanAmount">
+
+            <input class="form-control-range range ms-2 mt-3" type="range" formControlName="loanAmount"
+                id="loanAmountRange" min="0" (change)="calculateEmi()" max="50000000" step="100000" [(ngModel)]="loanAmountValue"
+                (input)="updateLoanAmount()" /> <br>
+
+            <!-- Second Data -->
+            <label for="interestRate" class="mt-3">Interest Rate (Per Annum):</label>
+            <input type="text" (change)="calculateEmi()" id="interestRate" class="form-control w-50 mt-2 ms-2" placeholder="Interest Rate"
+                formControlName="interestRate">
+
+            <input class="form-control-range range ms-2 mt-3" type="range" formControlName="interestRate"
+                id="interestValue" min="0" (change)="calculateEmi()" max="20" step="0.1" [(ngModel)]="interestValue"
+                (input)="updateInterestRate()" /> <br>
+
+            <!-- Third Data row -->
+
+            <label for="loanTenure" class="mt-3">Loan Tenure(In Months)</label>
+
+            <input type="text" (change)="calculateEmi()" id="loanTenure" class="form-control w-50 mt-2 ms-2" placeholder="Loan amount"
+                formControlName="loanTenure">
+
+            <input class="form-control-range range ms-2 mt-3" type="range" formControlName="loanTenure"
+                id="loanAmountRange" min="0" (change)="calculateEmi()" max="500" step="1" [(ngModel)]="loanTenureValue"
+                (input)="updateLoanTenure()" />
+            <br>
+
+            <button class="btn btn-success ms-2 mt-4">Calculate</button>
+        </form>
+
+    </div>
+
+    <div class="calcresult">
+
+        <div class="formresult">
+
+            <pre>
+Total Interest Payable: {{totalInterest | currency:'INR'}}
+
+Total Payment:            {{totalAmount | currency:'INR'}}
+
+Loan Emi:                   {{emi  | currency:'INR'}}
+            </pre>
+
+        </div>
+
+        <div class="pieresult">
+            <!-- <hr> --> <br>
+            <div style="height: 200px; width: 100%;">
+                <canvas id="canvas"></canvas>
+            </div>
+        </div>
+
+    </div>
+</div>

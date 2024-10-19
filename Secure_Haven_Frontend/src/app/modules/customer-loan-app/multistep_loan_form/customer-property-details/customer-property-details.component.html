@@ -1,0 +1,32 @@
+<form [formGroup]="propertydetails" (ngSubmit)="onSubmit()">
+
+    <mat-form-field>
+        <mat-label>Property Type</mat-label>
+        <input matInput formControlName="propertyType" required>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Property Area</mat-label>
+        <input matInput formControlName="propertyArea" required>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Construction Area</mat-label>
+        <input matInput formControlName="constructionArea" required>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Property Price </mat-label>
+        <input matInput formControlName="propertyPrice" required>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Property Address</mat-label>
+        <input matInput formControlName="propertyAddress" required>
+    </mat-form-field>
+
+    <br>
+    <button mat-raised-button class="btn" color="primary" matStepperPrevious>Back</button>&nbsp;
+    <button mat-raised-button color="primary" matStepperNext [disabled]="propertydetails.invalid">Next</button>
+
+</form>

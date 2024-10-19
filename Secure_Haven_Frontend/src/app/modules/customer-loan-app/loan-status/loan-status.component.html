@@ -1,0 +1,16 @@
+<div class="login-container">
+    <h2>Application Status</h2>
+    <form [formGroup]="applicationForm" (ngSubmit)="viewApplication()" >
+        <input class="logininput" type="text" formControlName="app_id" placeholder="Application No." required>
+
+        <div class=" logbtn mt-2">
+            <p>
+                {{message}}
+            </p>
+            <button type="submit" class="btn btn-primary d-flex">View Application</button>
+        </div>
+    </form>
+  
+</div>
+
+<router-outlet></router-outlet>

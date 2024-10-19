@@ -1,0 +1,22 @@
+<form [formGroup]="customermortgage" (ngSubmit)="onSubmit()">
+
+    <mat-form-field>
+      <mat-label>Property Value</mat-label>
+      <input matInput formControlName="propertyValue" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>PropertyType</mat-label>
+      <input matInput formControlName="propertyType" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Loan On Property</mat-label>
+      <input matInput formControlName="loanOnProperty" required>
+    </mat-form-field>
+
+    <br>
+      <button mat-raised-button class="btn" color="primary" matStepperPrevious>Back</button>&nbsp;
+      <button mat-raised-button color="primary" matStepperNext [disabled]="customermortgage.invalid">Next</button>
+  
+</form>

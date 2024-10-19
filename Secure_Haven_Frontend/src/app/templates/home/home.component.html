@@ -1,0 +1,183 @@
+<app-header></app-header>
+
+<!-- row one -->
+<div class="mainhomediv" [hidden]="hide">
+    <div class="homebg ms-4">
+        <div class="homecontent mt-5  p-5">
+
+            <div class="homeheadline">
+                <pre> Get Instant Approval on Home Loans with
+<span>Secure Haven</span> 
+         </pre>
+
+            </div>
+
+            <div class="hometagline">
+                <p>
+                    Building Futures, One Home Loan at a Time: Competitive Rates, Personalized Service!</p>
+            </div>
+            <div class="homeapplybtn">
+                <button class="btn btn-primary">Apply For Loan <i class="fa fa-long-arrow-right"
+                        aria-hidden="true"></i></button>
+            </div>
+
+        </div>
+
+        <div class="homeimage">
+
+            <img src="assets/Images/HL_web.webp" height="500px" width="500px">
+
+        </div>
+    </div>
+    <!-- row second -->
+    <div class="homeloan">
+        <div class="container">
+            <button class="scrolltop" (click)="scrollToTop()">Scroll To Top <i class="fa fa-long-arrow-up"
+                    aria-hidden="true"></i></button>
+            <div class="home_h1 p-5">
+                <h1 class="homeheading">What is a Home Loan?</h1>
+
+            </div>
+            <div class=" content">
+                <p>Secure Haven offers housing loans up to ₹5 Crores at attractive rates. Repay over 30
+                    years with
+                    flexibility. No more complicated processes. Just your dream home, waiting for you.</p>
+            </div>
+            <div class=" content">
+                <p>A home loan is the amount you borrow from a financial institution for the purpose of
+                    purchasing or
+                    constructing a dream home or carrying out renovations. It is a secured loan, meaning you have to
+                    pledge
+                    collateral. Just like any other loan, you can repay your housing loan in easy EMIs (Equated
+                    Monthly
+                    Installments). Moreover, you can also claim tax benefits under Sections 80C, 24B, 80EE and
+                    80EEA.
+                </p>
+            </div>
+
+            <div class="content">
+                <p>
+                    Secure Haven offers housing loans of up to ₹5 Crore at attractive interest rates and flexible
+                    repayment
+                    tenures
+                    of
+                    up to 30 years. Download the Secure app from App Store or Play Store, tap on ‘Home Loan’ to
+                    auto-install
+                    the
+                    home loan app, apply and get instant loan approval.
+                </p>
+            </div>
+
+        </div>
+
+
+    </div>
+    <div id="emicalc" class="emihome">
+        <app-emi-cal></app-emi-cal>
+
+    </div>
+
+    <div id="testimonial" class="testimonialhome">
+        <app-testimonial></app-testimonial>
+    </div>
+
+    <div id="aboutus" class="abouthome">
+        <app-about></app-about>
+    </div>
+
+    <!-- <footer>
+    <div class="box">
+  
+        <div class="main">
+          <a href="customer">Customer care</a>
+          <p class="">18001800</p>
+      
+        </div>
+        <div class="loc">
+          <a href="location"></i>Location</a>
+        </div>
+        
+      
+        <div class="main">
+          <a href="customer">Customer care</a>
+        </div>
+        <div class="loc">
+          <a href="location">Location</a>
+        </div>
+
+        <div class="copyright">
+            <p>Copyright 2024. All Rights Reserved</p>
+          </div>
+      
+        
+      
+        <div class="iconitem ms-auto mt-4 ">
+          <a href=""><i class="fa fa-envelope icons " aria-hidden="true"></i></a>
+          <a href=""><i class="fa fa-instagram icons ms-3" aria-hidden="true"></i></a>
+          <a href=""><i class="fa fa-linkedin-square icons ms-3" aria-hidden="true"></i></a>
+          <a href=""><i class="fa fa-youtube-play icons  ms-3 me-3" aria-hidden="true"></i></a>
+         
+                                                            
+      </div>
+      
+      </div>
+      
+      
+</footer> -->
+    <footer id="contactus">
+        <div class="footer">
+
+            <div class="footercontent d-flex">
+                <div class="contact">
+                    <p><i class="fa fa-phone-square" aria-hidden="true"></i>Customer Care</p>
+                    <button class="btn btn-primary ms-5">1800 1080 </button>
+
+                </div>
+
+                <div class="mail">
+                    <p class="ms-1"><i class="fa fa-envelope" aria-hidden="true"></i> E-Mail</p>
+                    <p>securehaven&#64;gmail.com</p>
+
+                </div>
+
+                <div class="location">
+                    <p><i class="fa fa-map-marker" aria-hidden="true"></i>Location</p>
+                    <p>
+                        Secure Haven, karve nagar, Pune
+                    </p>
+
+                </div>
+
+                <div class="social">
+                    <i class="fa fa-envelope emaillogo" aria-hidden="true"></i>
+                    <i class="fa fa-instagram insta " aria-hidden="true"></i>
+                    <i class="fa fa-linkedin-square linkedin" aria-hidden="true"></i>
+                    <i class="fa fa-youtube-play youtube " aria-hidden="true"></i>
+
+                </div>
+
+            </div>
+
+            <div class="copyright">
+                <p>All information is subject to specific conditions | © 2024 Secure Haven Ltd. All rights are
+                    reserved.</p>
+
+            </div>
+
+        </div>
+    </footer>
+</div>
+
+<div *ngIf="hideInquiry">
+    <app-enquiry></app-enquiry>
+</div>
+
+
+
+<div *ngIf="hideLogin">
+    <app-login></app-login>
+</div>
+
+<!-- <button *ngIf="isShow" (click)="gotoTop()">👆</button> -->
+
+<router-outlet></router-outlet>

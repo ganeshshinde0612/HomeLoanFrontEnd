@@ -1,0 +1,185 @@
+<div class="main-content" *ngIf="customerData">
+    <table class="table table-bordered">
+        <tr>
+            <th>Application No.</th>
+            <td>{{customerData.id}}</td>
+        </tr>
+
+        <tr>
+            <th>First Name</th>
+            <td>{{customerData.customerinfo.firstName}}</td>
+
+            <th>Middle Name</th>
+            <td>{{customerData.customerinfo.middleName}}</td>
+
+            <th>Last Name</th>
+            <td>{{customerData.customerinfo.lastName}}</td>
+        </tr>
+
+        <tr>
+            <th>Age</th>
+            <td>{{customerData.customerinfo.age}}</td>
+        </tr>
+
+        <tr>
+            <th>Gender</th>
+            <td>{{customerData.customerinfo.gender}}</td>
+        </tr>
+
+        <tr>
+
+            <th>Date Of Birth</th>
+            <td>{{customerData.customerinfo.dob}}</td>
+        </tr>
+
+        <tr>
+            <th>Mobile No.</th>
+            <td>{{customerData.customerinfo.mobileNo}}</td>
+
+            <th>E-mail Id</th>
+            <td>{{customerData.customerinfo.email}}</td>
+        </tr>
+
+        <tr>
+            <th>Aadhar No.</th>
+            <td>{{customerData.customerinfo.aadhar}}</td>
+
+            <th>Pancard No.</th>
+            <td>{{customerData.customerinfo.pancard}}</td>
+        </tr>
+
+        <tr>
+            <th style="color: blue;">Total Loan Required</th>
+            <td style="color: blue;">{{customerData.customerinfo.totalloanrequired}}</td>
+        </tr>
+
+    </table>
+
+    <div>
+        <button class="btn btn-primary mt-3" (click)="checkStatus()">Check Status</button>
+    </div>
+
+    <div *ngIf="sanctionDetails">
+
+        <button type="button" (click)="generatePDF()" class="btn btn-warning mt-4 ms-4 mb-4">Download Sanction
+            Letter</button>
+
+
+        <div #content>
+            <div class="container">
+
+
+                <h3 class="text-start ">Sanction Letter</h3>
+                <p>Date {{sanctionDetails.sactionDate}}</p>
+                <p>Dear, {{customerData.customerinfo.lastName}} {{customerData.customerinfo.firstName}}
+                    {{customerData.customerinfo.middleName}}
+                </p>
+                <p>Thank you for choosing Secure Haven Bank. Based on the application and information provided therein,
+                    we are
+                    pleased to
+                    extend an offer to you for a loan as per the preliminary terms and conditions mentioned below:</p>
+                <table class="table table-bordered border-dark" style="width: 60%;">
+                    <tr>
+                        <th>Application No </th>
+                        <td>{{sanctionDetails.app_id}}</td>
+                    </tr>
+                    <tr>
+                        <th>Sanctioned Date</th>
+                        <td> {{sanctionDetails.sactionDate}}</td>
+                    </tr>
+                    <tr>
+                        <th>Applicant Name </th>
+                        <td>{{customerData.customerinfo.firstName}} {{customerData.customerinfo.middleName}}
+                            {{customerData.customerinfo.lastName}}</td>
+                    </tr>
+                    <tr>
+                        <th>Mobile No </th>
+                        <td>{{customerData.customerinfo.mobileNo}}</td>
+                    </tr>
+                </table>
+                <br>
+                <table class="table table-bordered border-dark" style="width: 80%;">
+                    <tr>
+                        <th>Loan Type</th>
+                        <td>Home Loan</td>
+                    </tr>
+                    <tr>
+                        <th>Loan Amount Sanctioned: </th>
+                        <td>{{sanctionDetails.loanAmountSanctioned}} Rs.</td>
+                    </tr>
+                    <tr>
+                        <th>Reference Interest Rate:</th>
+                        <td>{{sanctionDetails.rateOfInterest}}% per annum (Interest Type: Floating rate of interest |
+                            Periodicity of Interest
+                            Application: Monthly)</td>
+                    </tr>
+                    <tr>
+                        <th>Floating Interest Rate:</th>
+                        <td>Reference rate applicable at the time of disbursement - 4.90% per annum</td>
+                    </tr>
+                    <tr>
+                        <th>Loan Tenure (In months):</th>
+                        <td>{{sanctionDetails.loanTenure}}</td>
+                    </tr>
+                    <tr>
+                        <th>Total Processing Charges:</th>
+                        <td>Up to 0.5% of the total loan amount</td>
+                    </tr>
+                    <tr>
+                        <th>Origination Fee (inclusive of GST):</th>
+                        <td>2,500</td>
+                    </tr>
+                    <tr>
+                        <th>Sanction Letter Validity:</th>
+                        <td>Up to 0.5% of the total loan amount</td>
+                    </tr>
+                    <tr>
+                        <th>Amount of EMI (INR):</th>
+                        <td>{{sanctionDetails.monthlyEmiAmount}}</td>
+                    </tr>
+                    <tr>
+                        <th>Property Address:</th>
+                        <td>{{customerData.customerpropertydetails.propertyAddress}}</td>
+                    </tr>
+
+                </table>
+                <p>Additional conditions to comply prior to loan disbursal: <br>
+
+                    1. Repayment from ABC Bank <br>
+                    2. Legal vetting and search to be conducted <br>
+                    3. NOC and offered collateral <br>
+                    4. Confirmation form, official ID and copy of ID <br>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div *ngIf="disbursementDetails">
+        <p>dis</p>
+    </div>
+
+    <table class="text-center payment-table">
+
+        <tr>
+            <th class="payment-th">Emi Date</th>
+            <th class="payment-th">Monthly Emi</th>
+            <th class="payment-th">Payment Status</th>
+            <th class="payment-th">Payment</th>
+        </tr>
+    
+        <tr *ngFor="let date of monthlyDates">
+            <td class="payment-td">{{date | date: 'dd/MM/yyyy'}}</td>
+            <td class="payment-td">{{sanctionDetails.monthlyEmiAmount}}</td>
+            
+            <td class="payment-td">Pending...</td>
+            <td class="payment-td">
+                <button class="btn btn-color w-50" (click)="doPayment()">Pay</button>
+            </td>
+
+        </tr>
+
+    </table>
+</div>
+
+

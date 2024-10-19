@@ -1,0 +1,30 @@
+<div class="login-container" [hidden]="hideLogin">
+    <h2>Login Form</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="mt-4">
+        <input class="logininput" type="text" formControlName="username" placeholder="Username" required >
+        <input class="logininput mt-2" type="password" formControlName="password" placeholder="Password" required>
+        <div class="d-flex logbtn mt-2">
+            
+            <button type="submit" class="btn btn-primary d-flex">Login</button>
+            <a href="#" class="forgot-password mt-2 ms-4">Forgot Password?</a>
+        </div>  
+    </form>
+    <br>
+    <a class="register ms-4" (click)="openRegisterForm()">Dont have an Account? Register</a>
+    <p>{{message}}</p>
+</div>
+<!-- <div class="login-container">
+    <h2>Login Form</h2>
+    <form action="#" method="post">
+        <input class="logininput" type="text" name="username" placeholder="Username" required>
+        <input class="logininput" type="password" name="password" placeholder="Password" required>
+        <div style="display: flex;">
+            <button class="btn btn-primary d-flex">Login</button>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
+    </form>
+</div> -->
+
+<div [hidden]="hideRegister">
+    <app-register></app-register>
+</div>

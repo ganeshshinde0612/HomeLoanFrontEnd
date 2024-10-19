@@ -1,0 +1,103 @@
+.aboutbg{
+    /* background-image: url('/assets/images/WbQnbas.png'); */
+   
+    height: 200px;
+    width: 50%;
+    background: center;
+    background-repeat: no-repeat;
+ 
+    opacity: 0.2;
+    margin-left: 33%;
+    /* margin-top: 20%; */
+    background: fixed;
+    
+    
+}
+
+.homeheading{
+    letter-spacing: 3x;
+    word-spacing: 5px;
+    font-family: sans-serif;
+    line-height: 10px;
+    color: rgb(37, 36, 36);
+}
+
+.about{
+    height: 630px;
+    width: 82%;
+    /* background-color: aqua; */
+    margin-left: 132px;
+    float: left;
+    margin-top: 100px;
+}
+.aboutcontent
+{
+    height: 600px;
+    width: 60%;
+    /* background-color: aquamarine; */
+    margin: 0;
+    float: left;
+}
+
+.aboutinfo
+{
+    height: 180px;
+    width: 100%;
+    /* background-color: rgb(88, 182, 220);
+     */
+     background-color: rgb(241, 247, 250);
+    margin: 0;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: -2px -2px 12px rgb(211, 208, 208);
+}
+.mission
+{
+    
+    height: 180px;
+    width: 100%;
+    /* background-color: rgb(88, 182, 220); */
+    background-color: rgb(241, 247, 250);
+    margin: 0;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: -2px -2px 12px rgb(211, 208, 208);
+}
+
+.values{
+    height: 210px;
+    width: 100%;
+    /* background-color: rgb(102, 223, 191); */
+    margin: 0;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: rgb(241, 247, 250);
+    box-shadow: -2px -2px 12px rgb(211, 208, 208);
+}
+.aboutimg
+{
+    height: 500px;
+    width: 35%;
+    float: right;
+    /* background-color: blue; */
+    margin: 0;
+    margin-left:20px ;
+    margin-top: 90px;
+    background-image: url('https://i.imgur.com/WbQnbas.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.aboutpara{
+    text-align: justify;
+    font-size: 16  px;
+    font-family: sans-serif;
+    letter-spacing: 0px;
+}
+
+.text
+{
+    padding-bottom: 10px;
+}

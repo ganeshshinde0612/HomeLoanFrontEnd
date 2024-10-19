@@ -1,0 +1,21 @@
+.text-center    {
+    text-align: center;
+    color: rgb(10, 232, 184);
+}
+.form-group{
+    margin: 20px;
+}
+button{
+    margin-left: 20px;
+}
+.abc{
+    width: 323px;
+}
+th {
+    padding: 5px;
+    font-weight: normal;
+}
+.container
+{
+    text-align: justify;
+}

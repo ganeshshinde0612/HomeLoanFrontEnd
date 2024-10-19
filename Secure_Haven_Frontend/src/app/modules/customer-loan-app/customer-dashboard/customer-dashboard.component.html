@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-sm mt-2  navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand ms-5 text-success"><img src="assets/Images/logo-no-background.png" alt="" height="50"
+            width="250"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="collapsibleNavbar">
+            <ul class="navbar-nav  ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="Adminlogin" routerLinkActive="active" >{{customerData.firstName}} {{customerData.lastName}}</a>
+                    <!--  (click)="navigateAndSetActive('about')" [class.active]="activeItem === 'about'" -->
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link " routerLink="applyloan" (click)="applyForLoan()" routerLinkActive="active" >Apply For Loan</a>
+                    <!--  (click)="navigateAndSetActive('about')" [class.active]="activeItem === 'about'" -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " routerLink="loanstatus" routerLinkActive="active" >Loan Status</a>
+                    <!-- (click)="navigateAndSetActive('contact')" [class.active]="activeItem === 'contact'" -->
+                </li>  
+                <li class="nav-item">
+                    <a class="nav-link " href="/" routerLinkActive="active" >Log Out</a>
+                    <!-- (click)="navigateAndSetActive('contact')" [class.active]="activeItem === 'contact'" -->
+                </li>   
+                
+    
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="homebg ms-4 mt-4">
+    <div class="homecontent mt-5  p-5">
+
+        <div class="homeheadline">
+            <pre> Get Instant Approval on Home Loans with
+<span>Secure Haven</span> 
+     </pre>
+
+        </div>
+
+        <div class="hometagline">
+            <p>
+                Welcome {{customerData.firstName}} {{customerData.lastName}}</p>
+        </div>
+        <div class="homeapplybtn">
+            <button class="btn btn-primary">Apply For Loan <i class="fa fa-long-arrow-right"
+                    aria-hidden="true"></i></button>
+        </div>
+
+    </div>
+
+    <div class="homeimage">
+
+        <img src="assets/Images/HL_web.webp" height="500px" width="500px">
+
+    </div>
+</div>
+<router-outlet></router-outlet>

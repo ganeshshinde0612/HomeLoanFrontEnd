@@ -1,0 +1,27 @@
+<form [formGroup]="customerproffession" (ngSubmit)="onSubmit()">
+
+    <mat-form-field>
+      <mat-label>Profession Type</mat-label>
+      <input matInput formControlName="professionType" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Salary</mat-label>
+      <input matInput formControlName="salary" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Designation</mat-label>
+      <input matInput formControlName="designation" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Working Period</mat-label>
+      <input matInput formControlName="workingPeriod" required>
+    </mat-form-field>
+
+    <br>
+      <button mat-raised-button class="btn" color="primary" matStepperPrevious>Back</button>&nbsp;
+      <button mat-raised-button color="primary" matStepperNext [disabled]="customerproffession.invalid">Next</button>
+  
+  </form>

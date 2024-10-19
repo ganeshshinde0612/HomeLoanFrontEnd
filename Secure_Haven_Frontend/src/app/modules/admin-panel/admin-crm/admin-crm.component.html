@@ -1,0 +1,38 @@
+<div class="alert alert-success" role="alert" [hidden]="alert">
+  Inquiries Forwarded Successfully !
+</div>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Inquiry Id</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Mobile No.</th>
+        <th scope="col">Pancard</th>
+        <th class="text-center" scope="col">Select</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of allInquiries">
+        <td>{{i.id}}</td>
+        <td>{{i.firstName}}</td>
+        <td>{{i.lastName}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.mobileNo}}</td>
+        <td>{{i.pancard}}</td>
+        <td class="text-center">
+          <!-- <input type="checkbox" value="{{i.id}}" name="id"> -->
+          <input type="checkbox" (change)="toggleSelection(i.id)" />
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="7">
+          <button class="btn btn-success" (click)="sendInquiryId()">Submit to Operational Executive</button>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>

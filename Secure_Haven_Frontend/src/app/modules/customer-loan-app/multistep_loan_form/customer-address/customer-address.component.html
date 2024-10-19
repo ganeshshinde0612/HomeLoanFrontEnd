@@ -1,0 +1,36 @@
+<form [formGroup]="customeraddress" (ngSubmit)="onSubmit()">
+
+    <mat-form-field>
+      <mat-label>House No</mat-label>
+      <input matInput formControlName="houseNo"  required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Area Name</mat-label>
+      <input matInput formControlName="areaName"  required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>City Name</mat-label>
+      <input matInput formControlName="cityName"  required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>District</mat-label>
+      <input matInput formControlName="district"  required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>State</mat-label>
+      <input matInput formControlName="state"  required>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Pincode</mat-label>
+        <input matInput formControlName="pincode"  required>
+      </mat-form-field>
+    <br>
+      <button mat-raised-button class="btn" color="primary" matStepperPrevious>Back</button>&nbsp;
+      <button mat-raised-button color="primary" matStepperNext [disabled]="customeraddress.invalid">Next</button>
+  
+  </form>

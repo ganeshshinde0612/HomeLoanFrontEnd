@@ -1,0 +1,12 @@
+h4{
+    letter-spacing: 1px;
+    margin-left: 380px;
+}
+*{
+    margin: 0;
+}
+
+th{
+    /* font-weight: normal; */
+    color: rgb(58, 58, 57);
+}

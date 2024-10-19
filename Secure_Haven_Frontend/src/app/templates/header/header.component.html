@@ -1,0 +1,45 @@
+<!-- <p>header works!</p> -->
+<nav id="securenav" class="navbar navbar-expand-sm mt-2 custom  navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand me-2  text-success"><img src="assets/Images/logo-no-background.png" alt="" height="50"
+                width="250"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav  ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" (click)="onInquiry()"  routerLinkActive="active">Inquiry</a>
+
+                    <!--  (click)="navigateAndSetActive('about')" [class.active]="activeItem === 'about'" -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " (click)="toEmiCalc()" routerLink="emi-calculator" routerLinkActive="active">Emi
+                        Calculator</a>
+                    <!-- (click)="navigateAndSetActive('contact')" [class.active]="activeItem === 'contact'" -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " (click)="toTestimonial()" routerLink="testimonial"
+                        routerLinkActive="active">Testimonial</a>
+                    <!-- (click)="navigateAndSetActive('emi calculator')" [class.active]="activeItem === 'emi calculator'" -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " (click)="toAbout()" routerLink="about" routerLinkActive="active">About</a>
+                    <!-- (click)="navigateAndSetActive('enquiry')" [class.active]="activeItem === 'enquiry'" -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " (click)="toContact()" routerLink="contact-us" routerLinkActive="active">Contact
+                        Us</a>
+                    <!-- (click)="navigateAndSetActive('login')" [class.active]="activeItem === 'login'" -->
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link " (click)="onLogin()" routerLinkActive="active">Login</a>
+                    <!-- (click)="navigateAndSetActive('login')" [class.active]="activeItem === 'login'" -->
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</nav>

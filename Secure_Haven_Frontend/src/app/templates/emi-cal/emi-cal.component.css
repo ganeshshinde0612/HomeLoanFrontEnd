@@ -1,0 +1,124 @@
+.emicalculator
+{
+  height: 490px;
+  width: 70%;
+  /* background-color: aqua; */
+  margin-left: 220px;
+  /* margin-right: 450px; */
+  /* border: 1px solid; */
+  /* box-shadow: -0px -1px 2px 2px rgb(155, 151, 151);*/
+   box-shadow: -2px -2px 12px rgb(211, 208, 208);
+  border-radius: 10px;
+  /* border-color:  rgb(55, 155, 112); */
+  padding-left: 80px;
+  padding-top: 50px;
+  padding-right: 50px;
+  /* margin: 0 auto; */
+}
+
+.emicalcform
+{
+  height: 400px;
+  width: 50%;
+  /* background-color: aquamarine; */
+  margin: 0;
+  float: left;
+}
+
+.calcresult
+{
+  height: 400px;
+  margin: 0;
+  width: 50%;
+  /* background-color: bisque; */
+  float: right;
+  box-shadow: -2px -2px 12px rgb(211, 208, 208);
+  border-radius: 30px;
+  /* padding: 10px; */
+
+}
+
+.formresult, pre{
+  height: 153px;
+  width: 100%;
+  /* background-color: blueviolet; */
+  margin: 0;
+  font-size: 17px;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  line-height: 23.8px;
+  /* border-left: 1px solid; */
+  /* border: 1px solid; */
+  /* box-shadow: -2px -2px 12px rgb(211, 208, 208); */
+  border-bottom: none;
+  border-radius: 10px 10px 0px 0px;
+  background-color: rgb(246, 249, 246);
+  padding-top: 10px;
+  padding-left: 30px;
+  
+}
+.pieresult
+{
+  margin: 0 auto;
+  height: 250px;
+  width: 100%;
+  /* background-color: blue; */
+  /* margin-left: 50px; */
+  /* border-left: 1px solid; */
+  /* border: 2px solid; */
+  /* box-shadow: -2px 0px 12px rgb(211, 208, 208); */
+  border-top: none;
+  border-radius: 0px 0px 10px 10px;
+  padding-left: 20px;
+  background-color: rgb(246, 249, 246);
+  padding-left: 100px;
+  
+}
+form{
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 17px;
+  letter-spacing: 2px;
+}
+
+.form-control-range::-webkit-slider-runnable-track {
+  height: 2px; /* Adjust the height as needed */
+}
+
+.form-control-range::-moz-range-track {
+  height: 3px; /* Adjust the height as needed */
+}
+
+.form-control-range::-ms-track {
+  height: 3px /* Adjust the height as needed */
+}
+
+.form-control-range::-webkit-slider-thumb {
+  width: 20px; /* Adjust the width of the thumb as needed */
+  height: 20px; /* Adjust the height of the thumb as needed */
+  margin-top: -8px; /* Half of the difference between the track height and thumb height to center vertically */
+  
+}
+
+.form-control-range::-moz-range-thumb {
+  width: 20px; /* Adjust the width of the thumb as needed */
+  height: 20px; /* Adjust the height of the thumb as needed */
+  margin-top: -8px; /* Half of the difference between the track height and thumb height to center vertically */
+}
+
+.form-control-range::-ms-thumb {
+  width: 20px; /* Adjust the width of the thumb as needed */
+  height: 20px; /* Adjust the height of the thumb as needed */
+  margin-top: -8px /* Half of the difference between the track height and thumb height to center vertically */
+}
+
+.range{
+  width: 310px;
+}
+
+.calcheading{
+  margin-left: 420px;
+  color: rgb(98, 96, 94);
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
